@@ -1,8 +1,6 @@
 import os
 from flask import Flask, request, abort, jsonify
 from flask_cors import CORS
-import sys
-sys.path.append("C:/Users/Denis/Documents/russtar/test db")
 from models import setup_db, Movie, db_drop_and_create_all
 
 
@@ -31,7 +29,7 @@ def create_app(test_config=None):
                 {
                     "success": True,
                     "movie data": movie,
-                    "movie name": movie_title
+                    "movie name": movie_name
                 }
             ), 200
         except:
