@@ -1,6 +1,8 @@
 import os
 from flask import Flask, request, abort, jsonify
 from flask_cors import CORS
+import sys
+sys.path.append("C:/Users/Denis/Documents/russtar/test db")
 from models import setup_db, Movie, db_drop_and_create_all
 
 
@@ -20,16 +22,12 @@ def create_app(test_config=None):
     def get_movies():
         try:
             movies = Movie.query.order_by(Movie.release_date).all()
-            movies_title = Movie.query.order_by(Movie.title).all()
             movie = []
             movie = [mov.release_date for mov in movies]
-            movie_name = []
-            movie_name = [mov.title for mov in movies_title]
             return jsonify(
                 {
                     "success": True,
-                    "movie data": movie,
-                    "movie name": movie_name
+                    "movie name": movie
                 }
             ), 200
         except:
