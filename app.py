@@ -30,8 +30,8 @@ def create_app(test_config=None):
             return jsonify(
                 {
                     "success": True,
-                    "movie data": True,
-                    "movie name": True
+                    "movie data": movie,
+                    "movie name": movie_title
                 }
             ), 200
         except:
