@@ -1,7 +1,6 @@
 import os
 from flask import Flask, request, abort, jsonify
 from flask_cors import CORS
-import sys
 from models import setup_db, Movie, db_drop_and_create_all
 
 

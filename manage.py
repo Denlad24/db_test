@@ -1,7 +1,5 @@
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-import sys
-sys.path.append("C:/Users/Denis/Documents/russtar/test db")
 from app import app
 from models import db
 
