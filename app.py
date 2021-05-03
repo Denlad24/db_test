@@ -22,10 +22,14 @@ def create_app(test_config=None):
             movies = Movie.query.order_by(Movie.release_date).all()
             movie = []
             movie = [mov.release_date for mov in movies]
+            movies_title = Movie.query.order_by(Movie.title).all()
+            movie_title = []
+            movie_title = [mov.title for mov in movies_title]
             return jsonify(
                 {
                     "success": True,
-                    "movie name": movie
+                    "movie ata": movie,
+                    "movie title": movie_title
                 }
             ), 200
         except:
