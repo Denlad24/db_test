@@ -2,7 +2,6 @@ import os
 from flask import Flask, request, abort, jsonify
 from flask_cors import CORS
 import sys
-sys.path.append("C:/Users/Denis/Documents/russtar/test db")
 from models import setup_db, Movie, db_drop_and_create_all
 
 
